@@ -37,24 +37,28 @@ int main() {
 
 int doUnion(int a[], int n, int b[], int m)  {
     
-    int c[100000]={0};
+    vector<int>v(100000);
     for(int i=0;i<n;i++){
-        c[a[i]]++;
+        v[a[i]]++;
     }
     for(int i=0;i<m;i++){
-        c[b[i]]++;
+        v[b[i]]++;
     }
     
     int len=0;
-    for(int i=0;i<100000;i++){
-        if(c[i]>0){
+    vector<int>::iterator itr;
+
+    for(itr=v.begin();itr!=v.end();itr++){
+
+        if(*itr!=0)
             len++;
-            
-        }
-        
+    
+
     }
+
+
 
     
     return len;
+    }
     
-}
